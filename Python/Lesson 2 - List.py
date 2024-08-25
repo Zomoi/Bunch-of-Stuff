@@ -20,5 +20,28 @@ bugpokemon = ["Caterpie", "Volcarona", "Scyther"]
 rockpokemon = ["Onix", "Geodude", "Aron"]
 flyingpokemon = ["Zubat", "Dragonite", "Hawlucha"]
 wildpokemon = [bugpokemon, rockpokemon, flyingpokemon]
-print(f"You're exploring a cave and a wild {wildpokemon[1][1]} appeared!") #Geodude should be here
-# HANGGANG DITO MUNA, BUKAS NA ULIT
+print(f"You're exploring a cave and a wild {wildpokemon[1][1]} appeared!") # Geodude should be here
+# Converting list to tuples.  
+action = ["FIGHT","BAG","POKeMON","RUN"]
+actiontuples = tuple(action)
+print(actiontuples)
+skill = input(f"What will {yourpokemon} do? ").lower()
+if skill == "fight":
+    pokemonmove = ["Tackle","Growl"]
+    print(pokemonmove)
+    yourmove = input(f"What will {yourpokemon} do? ").lower()
+    if yourmove == "tackle":
+        print(f"{yourpokemon} deals 200 damage to {wildpokemon[1][1]}!")
+        print(f"It was super effective! {wildpokemon[1][1]} fainted, you gained 10 exp!")
+    elif yourmove == "growl":
+        print(f"{yourpokemon} used growl!")
+        print(f"{wildpokemon[1][1]} defense fell!")
+        print(f"{wildpokemon[1][1]} ran away!")
+if skill == "bag":
+    print("Your bag is empty!")
+elif skill == "pokemon":
+    print("You have no other pokemon!")
+elif skill == "run":
+    print("Ran away safely.")
+else:
+    print("Please choose one of the four options!")
